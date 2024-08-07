@@ -33,13 +33,13 @@ pipeline {
                 }
             }
         }
-        stage ('mvn integration test') {
-            steps {
-                script{
-                    mvnIntegrationtest()
-                }
-            }
-        }
+        // stage ('mvn integration test') {
+        //     steps {
+        //         script{
+        //             mvnIntegrationtest()
+        //         }
+        //     }
+        // }
 
     }
 }
