@@ -33,7 +33,7 @@ pipeline {
                 }
             }
         }
-        stage ('mvn unit test') {
+        stage ('mvn integration test') {
             steps {
                 script{
                     mvnIntegrationtest()
