@@ -1,0 +1,38 @@
+@Library('sharedLibraries') _
+pipeline {
+    agent any
+    stages {
+        stage ('clean workspace') {
+            steps {
+                cleanWorkSpace()
+            }
+        }
+        stage('Git Checkout'){
+   
+            steps{
+                script{
+                    gitCheckout(
+                       branch: "master",
+                       url: "git@github.com:venky0349/jpetsrore-6.git"
+                    )
+                }
+
+            }
+        }
+        stage ('mvn clean') {
+            steps {
+                 script{
+                    mvnClean()
+                 }
+            }
+        }
+        stage ('mvn unit test') {
+            steps {
+                script{
+                    mvnUnittest()
+                }
+            }
+        }
+
+    }
+}
